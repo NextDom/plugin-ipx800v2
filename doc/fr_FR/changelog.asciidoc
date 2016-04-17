@@ -1,0 +1,20 @@
+[horizontal]
+1.07:: Mise a jour des entrées analogiques, même si la valeur ne change pas pour les graphiques.
+
+1.06:: Compatibilité Jeedom 2.0
+
+1.05:: Modification de l'extension du logo.
++
+Compatibilité Imperihome
++
+Retrait de la suppression des équipements lors de la désactivation du plugin
+
+1.04:: Correction par rapport au nouveau core.
++
+Mise en place de collecte plus fréquente
+
+1.03:: Inversion des indices des btns
+
+1.02:: Ajout de Correction automatique par rapport au seuil Min et Max
+
+1.01:: Initialisation sur la base du plugin ipx800
