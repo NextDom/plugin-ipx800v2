@@ -30,6 +30,8 @@ Puis définir :
 * '''Compte'''
 * '''Mot de passe'''
 
+Vous retrouverez l'ensemble des élements de la carte dans le menu à gauche en clickant sur l'icone de celle-ci.
+
 == Quelques copies d'écran ==
 image::../images/ipx800v2_screenshot1.jpg[align="center"]
 image::../images/ipx800v2_screenshot2.jpg[align="center"]
