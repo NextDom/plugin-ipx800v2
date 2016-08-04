@@ -149,11 +149,11 @@ class ipx800v2_boutonCmd extends cmd
 		else
 			return false;
 			
-		$result = file_get_contents($url);
+		$result = @file_get_contents($url);
 		log::add('ipx800v2','debug',"get ".preg_replace("/:[^:]*@/", ":XXXX@", $url));
 		$count = 0;
 		while ( $result === false && $count < 3 ) {
-			$result = file_get_contents($url);
+			$result = @file_get_contents($url);
 			$count++;
 		}
 		if ( $result === false ) {
