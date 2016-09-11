@@ -1,4 +1,12 @@
 [horizontal]
+1.08:: Continue la collecte lorsque une IPX est HS.
++
+Trappe certains messages d'erreur.
++
+Ajout du type LIGHT_TOGGL pour les relais.
++
+Définition template des relais boutons.
+
 1.07:: Mise a jour des entrées analogiques, même si la valeur ne change pas pour les graphiques.
 
 1.06:: Compatibilité Jeedom 2.0

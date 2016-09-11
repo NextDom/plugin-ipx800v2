@@ -104,7 +104,7 @@ class ipx800v2 extends eqLogic {
 		if ( $this->getIsEnable() )
 		{
 			log::add('ipx800v2','debug','get '.preg_replace("/:[^:]*@/", ":XXXX@", $this->getUrl()). 'status.xml');
-			$this->xmlstatus = simplexml_load_file($this->getUrl(). 'status.xml');
+			$this->xmlstatus = @simplexml_load_file($this->getUrl(). 'status.xml');
 #			if ( $this->xmlstatus === false )
 #				throw new Exception(__('L\'ipx800v2 ne repond pas.',__FILE__));
 		}
@@ -127,6 +127,7 @@ class ipx800v2 extends eqLogic {
 			$cmd->setLogicalId('status');
 			$cmd->setIsVisible(1);
 			$cmd->setEventOnly(1);
+			$cmd->setDisplay('generic_type','GENERIC_INFO');
 			$cmd->save();
 		}
         $all_on = $this->getCmd(null, 'all_on');
@@ -138,6 +139,7 @@ class ipx800v2 extends eqLogic {
 			$all_on->setSubType('other');
 			$all_on->setLogicalId('all_on');
 			$all_on->setEventOnly(1);
+			$all_on->setDisplay('generic_type','GENERIC_ACTION');
 			$all_on->save();
 		}
         $all_off = $this->getCmd(null, 'all_off');
@@ -149,6 +151,7 @@ class ipx800v2 extends eqLogic {
 			$all_off->setSubType('other');
 			$all_off->setLogicalId('all_off');
 			$all_off->setEventOnly(1);
+			$all_off->setDisplay('generic_type','GENERIC_ACTION');
 			$all_off->save();
 		}
 		for ($compteurId = 0; $compteurId <= 1; $compteurId++) {
@@ -238,7 +241,33 @@ class ipx800v2 extends eqLogic {
 			$cmd->setLogicalId('status');
 			$cmd->setIsVisible(1);
 			$cmd->setEventOnly(1);
+			$cmd->setDisplay('generic_type','GENERIC_INFO');
 			$cmd->save();
+		}
+		else
+		{
+			if ( $cmd->getDisplay('generic_type') == "" )
+			{
+				$cmd->setDisplay('generic_type','GENERIC_INFO');
+				$cmd->save();
+			}
+		}
+		$all_on = $this->getCmd(null, 'all_on');
+		if ( is_object($all_on)) {
+			if ( $all_on->getDisplay('generic_type') == "" )
+			{
+				$all_on->setDisplay('generic_type','GENERIC_ACTION');
+				$all_on->save();
+			}
+		}
+
+		$all_off = $this->getCmd(null, 'all_off');
+		if ( is_object($all_off)) {
+			if ( $all_off->getDisplay('generic_type') == "" )
+			{
+				$all_off->setDisplay('generic_type','GENERIC_ACTION');
+				$all_off->save();
+			}
 		}
         $reboot = $this->getCmd(null, 'reboot');
         if ( is_object($reboot) ) {
@@ -292,11 +321,11 @@ class ipx800v2 extends eqLogic {
 			$statuscmd = $this->getCmd(null, 'status');
 			$url = $this->getUrl();
 			log::add('ipx800v2','debug','get '.preg_replace("/:[^:]*@/", ":XXXX@", $url).'status.xml');
-			$this->xmlstatus = simplexml_load_file($url. 'status.xml');
+			$this->xmlstatus = @simplexml_load_file($url. 'status.xml');
 			$count = 0;
 			while ( $this->xmlstatus === false && $count < 3 ) {
 				log::add('ipx800v2','debug','reget '.preg_replace("/:[^:]*@/", ":XXXX@", $url).'status.xml');
-				$this->xmlstatus = simplexml_load_file($url. 'status.xml');
+				$this->xmlstatus = @simplexml_load_file($url. 'status.xml');
 				$count++;
 			}
 			if ( $this->xmlstatus === false ) {
@@ -304,7 +333,7 @@ class ipx800v2 extends eqLogic {
 					$statuscmd->setCollectDate('');
 					$statuscmd->event(0);
 				}
-				log::add('ipx800v2','error',__('L\'ipx ne repond pas.',__FILE__)." ".$eqLogic->getName()." get ".preg_replace("/:[^:]*@/", ":XXXX@", $url). 'status.xml');
+				log::add('ipx800v2','error',__('L\'ipx ne repond pas.',__FILE__)." ".$this->getName()." get ".preg_replace("/:[^:]*@/", ":XXXX@", $url). 'status.xml');
 				return false;
 			}
 			if ($statuscmd->execCmd() != 1) {
@@ -320,7 +349,7 @@ class ipx800v2 extends eqLogic {
 					if ( count($status) != 0 )
 					{
 						$eqLogic_cmd = $eqLogicRelai->getCmd(null, 'state');
-						if ($eqLogic_cmd->execCmd(null, 2) != $eqLogic_cmd->formatValue($status[0])) {
+						if ($eqLogic_cmd->execCmd() != $eqLogic_cmd->formatValue($status[0])) {
 							log::add('ipx800v2','debug',"Change state off ".$eqLogicRelai->getName());
 							$eqLogic_cmd->setCollectDate('');
 							$eqLogic_cmd->event($status[0]);
@@ -337,7 +366,7 @@ class ipx800v2 extends eqLogic {
 					if ( count($status) != 0 )
 					{
 						$eqLogic_cmd = $eqLogicBouton->getCmd(null, 'state');
-						if ($eqLogic_cmd->execCmd(null, 2) != $eqLogic_cmd->formatValue($status[0])) {
+						if ($eqLogic_cmd->execCmd() != $eqLogic_cmd->formatValue($status[0])) {
 							log::add('ipx800v2','debug',"Change state off ".$eqLogicBouton->getName());
 							$eqLogic_cmd->setCollectDate('');
 							$eqLogic_cmd->event($status[0]);
@@ -354,7 +383,7 @@ class ipx800v2 extends eqLogic {
 					if ( count($status) != 0 )
 					{
 						$eqLogic_cmd = $eqLogicAnalogique->getCmd(null, 'brut');
-						if ($eqLogic_cmd->execCmd(null, 2) != $eqLogic_cmd->formatValue($status[0])) {
+						if ($eqLogic_cmd->execCmd() != $eqLogic_cmd->formatValue($status[0])) {
 							log::add('ipx800v2','debug',"Change brut off ".$eqLogicAnalogique->getName());
 						}
 						$eqLogic_cmd->setCollectDate('');
@@ -373,7 +402,7 @@ class ipx800v2 extends eqLogic {
 					if ( count($status) != 0 )
 					{
 						$nbimpulsion_cmd = $eqLogicCompteur->getCmd(null, 'nbimpulsion');
-						$nbimpulsion = $nbimpulsion_cmd->execCmd(null, 2);
+						$nbimpulsion = $nbimpulsion_cmd->execCmd();
 						$nbimpulsionminute_cmd = $eqLogicCompteur->getCmd(null, 'nbimpulsionminute');
 						if ($nbimpulsion != $status[0]) {
 							log::add('ipx800v2','debug',"Change nbimpulsion off ".$eqLogicCompteur->getName());
@@ -454,8 +483,8 @@ class ipx800v2Cmd extends cmd
 		{
 			$result = @file_get_contents($url.'?'.http_build_query($data));
 			if ( $count < 3 ) {
-				log::add('ipx800v2','error',__('L\'ipx ne repond pas.',__FILE__)." ".$eqLogic->getName()." get ".preg_replace("/:[^:]*@/", ":XXXX@", $url)."?".http_build_query($data));
-				throw new Exception(__('L\'ipx ne repond pas.',__FILE__)." ".$eqLogic->getName());
+				log::add('ipx800v2','error',__('L\'ipx ne repond pas.',__FILE__)." ".$this->getName()." get ".preg_replace("/:[^:]*@/", ":XXXX@", $url)."?".http_build_query($data));
+				throw new Exception(__('L\'ipx ne repond pas.',__FILE__)." ".$this->getName());
 			}
 			$count ++;
 		}

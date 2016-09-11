@@ -31,6 +31,7 @@ function ipx800v2_install() {
 		$cron->save();
 	}
 	config::save('temporisation_lecture', 60, 'ipx800v2');
+	config::save('subClass', 'ipx800v2_bouton;ipx800v2_analogique;ipx800v2_relai;ipx800v2_compteur', 'ipx800v2');
 	$cron->start();
 }
 
@@ -67,6 +68,7 @@ function ipx800v2_update() {
 	{
 		config::save('temporisation_lecture', 60, 'ipx800v2');
 	}
+	config::save('subClass', 'ipx800v2_bouton;ipx800v2_analogique;ipx800v2_relai;ipx800v2_compteur', 'ipx800v2');
 }
 
 function ipx800v2_remove() {
@@ -75,5 +77,6 @@ function ipx800v2_remove() {
 	if (is_object($cron)) {
 		$cron->remove();
 	}
+	config::remove('subClass', 'ipx800');
 }
 ?>
