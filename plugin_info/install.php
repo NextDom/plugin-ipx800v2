@@ -77,6 +77,6 @@ function ipx800v2_remove() {
 	if (is_object($cron)) {
 		$cron->remove();
 	}
-	config::remove('subClass', 'ipx800');
+	config::remove('subClass', 'ipx800v2');
 }
 ?>
