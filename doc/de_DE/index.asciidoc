@@ -1,63 +1,63 @@
-== Présentation ==
-Ce plugin permet de gérer les cartes ipx800 V2 de GCE.
+== Präsentation ==
+Dieses Plugin ermöglicht es Ihnen die IPX800 V2 -Karte von GCE-Electronics zu verwalten.
 
-Initialement, ce plugin a été créé pour connecter les ipx800 V2 de GCE.
+Ursprünglich ist dieses Plugin entstanden, um sich mit der IPX800 V2 GCE zu verbinden.
 
-=== Données visibles sur le Dashboard : ===
-* '''les entrée analogiques '''
-* '''les entrée numeriques '''
-* '''les relai '''
-* '''les compteurs d'impulsions'''
+=== Ersichtliche Daten auf dem Armaturenbrett : ===
+* ''Die Analogeingänge''
+* ''Die Digitaleingänge''
+* ''Die Relais''
+* '''Der Impulszähler''''
 
-=== Frequence de rafraichissement ===
-Les données récupéré par le plugin le sont toutes les minutes. Impossible de faire plus fréquent.
+=== Aktualisierungsrate  ===
+Die Daten werden vom Plugin jede Minute gesammelt. Es ist nicht möglich, eine höhere Frequenz zu haben.
 
-== Installation/Paramétrage ==
-Nous allons maintenant paramétrer un équipement. Pour se faire, cliquer sur '''Plugins / Protocole domotique / ipx800 V2'''
+== Installation/Einrichtung ==
+Wir werden jetzt ein Gerät einrichten. Um dort hin zu kommen, klicken Sie auf '''Plugins /  Automatisierungsprotokolle / IPX800 V2 '''.
 
 Puis cliquer sur le bouton en haut à gauche "'''Ajouter un équipement'''"
 
 Puis saisir le nom de l'équipement (ex. IPX 1)
 
-Puis définir :
+Dann definieren Sie :
 
-* '''Objet parent'''
-* '''Catégorie '''(optionnelle)
-* '''Activer '''(à cocher, sinon l’équipement ne sera pas utilisable)
-* '''Visible '''(optionel si vous ne désirez pas le rendre visible sur le Dashboard)
-* '''Adresse IP'''
+* '''Eltern-Objekt'''
+* ""Kategorie "'(optional)
+* '''Aktivieren''' (ankreuzen, andernfalls wird das Gerät nicht nutzbar sein)
+* '''Sichtbar''' (optional, wenn Sie nicht wünschen, dass es auf dem Armaturenbrett sichtbar ist)
+* '''IP Adresse'''
 * '''Port'''
-* '''Compte'''
-* '''Mot de passe'''
+* '''Konto'''
+* '''Passwort'''
 
-Vous retrouverez l'ensemble des élements de la carte dans le menu à gauche en clickant sur l'icone de celle-ci.
+Alle Elemente der Karte finden Sie im Menü auf der linken Seite, durch Klicken auf dieses Symbol.  
 
 == Comportement avec l'application mobile ==
 Par defaut, voici le comportement :
 
-* ''L'ip800v2''
+* ''IP800V2''
 
 Les commandes sont toutes paramétrées.
 
-* ''les entrées analogiques''
+* ''Die Analogeingänge''
 
 Les commandes sont toutes par defaut visible et le type dépend de la sonde choisi.
 
-* ''les entrées numeriques''
+* ''Die Digitaleingänge''
 
 Les commandes sont considérées comme des lumières.
 
-* ''les relais''
+* ''Die Relais''
 
 Les commandes sont considérées comme des lumières.
 
-* ''les compteurs d'impulsions''
+* ''Die Impulszähler''
 
 Les commandes sont considérées comme des types génériques.
 
 Il faut noter que l'on retrouvera dans l'application les commandes à partir du moment où elles sont paramétrées, même si elles ne sont pas marquées comme visible. Pour les masquer, il faut choisir dasn "Configuration commande" => "Type générique" => "Ne pas tenir compte de cette commande".
 
-== Quelques copies d'écran ==
+== Einige Kopien von Bildschirm ==
 image::../images/ipx800v2_screenshot1.jpg[align="center"]
 image::../images/ipx800v2_screenshot2.jpg[align="center"]
 image::../images/ipx800v2_screenshot3.jpg[align="center"]
@@ -65,5 +65,5 @@ image::../images/ipx800v2_screenshot3.jpg[align="center"]
 === FAQ
 include::faq.asciidoc[]
 
-== Change log ==
+== Fehlersuche ==
 include::changelog.asciidoc[]
