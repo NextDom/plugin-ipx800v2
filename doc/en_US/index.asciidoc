@@ -1,4 +1,4 @@
-== Présentation ==
+== Introduction ==
 Ce plugin permet de gérer les cartes ipx800 V2 de GCE.
 
 Initialement, ce plugin a été créé pour connecter les ipx800 V2 de GCE.
