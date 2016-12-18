@@ -1,5 +1,5 @@
 == Introduction ==
-Ce plugin permet de gérer les cartes ipx800 V2 de GCE.
+This plugin is used to manage GCE IPX800 V2 cards.
 
 Initially, this plugin was created to connect the ipx800 V2 of GCE Ecodevices.
 
@@ -21,11 +21,11 @@ Puis saisir le nom de l'équipement (ex. IPX 1)
 
 Puis définir :
 
-* '''Objet parent'''
-* '''Catégorie '''(optionnelle)
-* '''Activer '''(à cocher, sinon l’équipement ne sera pas utilisable)
-* '''Visible '''(optionel si vous ne désirez pas le rendre visible sur le Dashboard)
-* '''Adresse IP'''
+* '''Parent object'''
+* '''Optional  Category '''
+* '''Enable '''
+* *Visible*: makes your equipment visible on the dashboard.
+* '''IP Adress'''
 * '''Port'''
 * '''Compte'''
 * '''Mot de passe'''
@@ -43,7 +43,7 @@ Les commandes sont toutes paramétrées.
 
 Les commandes sont toutes par defaut visible et le type dépend de la sonde choisi.
 
-* ''les entrées numeriques''
+* "the digital inputs"
 
 Les commandes sont considérées comme des lumières.
 
