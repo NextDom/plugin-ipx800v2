@@ -15,7 +15,7 @@ Die Daten werden vom Plugin jede Minute gesammelt. Es ist nicht möglich, eine h
 == Installation/Einrichtung ==
 Wir werden jetzt ein Gerät einrichten. Um dort hin zu kommen, klicken Sie auf '''Plugins /  Automatisierungsprotokolle / IPX800 V2 '''.
 
-Puis cliquer sur le bouton en haut à gauche "'''Ajouter un équipement'''"
+Dann auf die Schaltfläche oben links "Gerät hinzufügen" klicken
 
 Puis saisir le nom de l'équipement (ex. IPX 1)
 

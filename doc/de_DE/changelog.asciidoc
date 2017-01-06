@@ -9,7 +9,7 @@ Définition template des relais boutons.
 
 1.07:: Mise a jour des entrées analogiques, même si la valeur ne change pas pour les graphiques.
 
-1.06:: Compatibilité Jeedom 2.0
+1.06:: Jeedom 2.0 Kompatibilität
 
 1.05:: Modification de l'extension du logo.
 +
