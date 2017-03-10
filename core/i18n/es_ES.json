@@ -17,7 +17,7 @@
     },
     "plugins\/ipx800v2\/desktop\/php\/ipx800v2_bouton.php": {
         "Général": "General",
-        "Nom de l'entrée numérique": "Nombre de la entrada numérica",
+        "Nom de l'entrée numérique": "Nombre de la entrada digital",
         "Objet parent": "Objeto padre",
         "Aucun": "Ninguno",
         "Catégorie": "Categoría",
@@ -50,7 +50,7 @@
     "plugins\/ipx800v2\/desktop\/php\/ipx800v2_compteur.php": {
         "Général": "General",
         "Nom du compteur": "Nombre del contador",
-        "Nom de l'entrée numérique": "Nombre de la entrada numérica",
+        "Nom de l'entrée numérique": "Nombre de la entrada digital",
         "Objet parent": "Objeto padre",
         "Aucun": "Ninguno",
         "Catégorie": "Categoría",
@@ -92,7 +92,7 @@
         "Utilisez sur l\\'icône suivant pour voir le détail de l\\'élément <i class=\"fa fa-sitemap\"><\/i>": "Utilice el icono siguiente para ver los detalles <i class=\\\"fa fa-sitemap\\\"></i>",
         "Entrée analogique": "Entrada analógica",
         "Relai": "Relé",
-        "Entrée numérique": "Entrada numérica",
+        "Entrée numérique": "Entrada Digital",
         "Compteur": "Medidor"
     },
     "plugins\/ipx800v2\/desktop\/js\/ipx800v2.js": {
