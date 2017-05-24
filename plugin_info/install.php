@@ -39,16 +39,20 @@ function ipx800v2_update() {
 	$cron = cron::byClassAndFunction('ipx800v2', 'daemon');
 	if (!is_object($cron)) {
 		$cron = new cron();
+		$cron->setClass('ipx800v2');
+		$cron->setFunction('daemon');
+		$cron->setEnable(1);
+		$cron->setDeamon(1);
+		$cron->setTimeout(1440);
+		$cron->setSchedule('* * * * *');
+		$cron->save();
+		$cron->stop();
+		$cron->start();
 	}
-	$cron->setClass('ipx800v2');
-	$cron->setFunction('daemon');
-	$cron->setEnable(1);
-	$cron->setDeamon(1);
-	$cron->setTimeout(1440);
-	$cron->setSchedule('* * * * *');
-	$cron->save();
-	$cron->stop();
-	$cron->start();
+	else
+	{
+		ipx800v2::deamon_start();
+	}
 	foreach (eqLogic::byType('ipx800v2_bouton') as $SubeqLogic) {
 		$SubeqLogic->save();
 	}

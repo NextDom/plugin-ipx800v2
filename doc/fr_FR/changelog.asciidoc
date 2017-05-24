@@ -1,28 +1,23 @@
-[horizontal]
-1.08:: Continue la collecte lorsque une IPX est HS.
-+
-Trappe certains messages d'erreur.
-+
-Ajout du type LIGHT_TOGGL pour les relais.
-+
-Définition template des relais boutons.
+WARNING: Detail complet des mises à jour sur https://github.com/guenneguezt/plugin-ipx800v2/commits/master[Historique Commit]
 
-1.07:: Mise a jour des entrées analogiques, même si la valeur ne change pas pour les graphiques.
+Liste des évolutions majeures de la version courante :
 
-1.06:: Compatibilité Jeedom 2.0
+- Modification pour compatibilité Jeedom V3
+- Plus de suivi de version
 
-1.05:: Modification de l'extension du logo.
-+
-Compatibilité Imperihome
-+
-Retrait de la suppression des équipements lors de la désactivation du plugin
+Anciennes évolutions :
 
-1.04:: Correction par rapport au nouveau core.
-+
-Mise en place de collecte plus fréquente
-
-1.03:: Inversion des indices des btns
-
-1.02:: Ajout de Correction automatique par rapport au seuil Min et Max
-
-1.01:: Initialisation sur la base du plugin ipx800
+- Continue la collecte lorsque une IPX est HS.
+- Trappe certains messages d'erreur.
+- Ajout du type LIGHT_TOGGL pour les relais.
+- Définition template des relais boutons.
+- Mise a jour des entrées analogiques, même si la valeur ne change pas pour les graphiques.
+- Compatibilité Jeedom 2.0
+- Modification de l'extension du logo.
+- Compatibilité Imperihome
+- Retrait de la suppression des équipements lors de la désactivation du plugin
+- Correction par rapport au nouveau core.
+- Mise en place de collecte plus fréquente
+- Inversion des indices des btns
+- Ajout de Correction automatique par rapport au seuil Min et Max
+- Initialisation sur la base du plugin ipx800
