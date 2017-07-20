@@ -93,7 +93,9 @@
         "Entrée analogique": "Analog input",
         "Relai": "Relay",
         "Entrée numérique": "Digital input",
-        "Compteur": "Counter"
+        "Compteur": "Counter",
+        "Gestion": "Gestion",
+        "Configuration": "Configuration"
     },
     "plugins\/ipx800v2\/desktop\/js\/ipx800v2.js": {
         "Nom": "Name",
@@ -112,5 +114,11 @@
         "Valeur": "Value",
         "Tester": "Test",
         "Accèder à l'interface de l'IPX": "Access user interface of the IPX"
+    },
+    "plugins\/ipx800v2\/plugin_info\/configuration.php": {
+        "Faire un don au développeur": "Faire un don au développeur",
+        "Faire un don via Paypal au développeur": "Faire un don via Paypal au développeur",
+        "Temporisation minumum entre deux lectures en secondes": "Temporisation minumum entre deux lectures en secondes",
+        "Trop diminuer cette valeur peut rendre instable votre serveur": "Trop diminuer cette valeur peut rendre instable votre serveur"
     }
 }
