@@ -31,7 +31,6 @@ function ipx800v2_install() {
 		$cron->save();
 	}
 	config::save('temporisation_lecture', 60, 'ipx800v2');
-	config::save('subClass', 'ipx800v2_bouton;ipx800v2_analogique;ipx800v2_relai;ipx800v2_compteur', 'ipx800v2');
 	$cron->start();
 }
 
@@ -53,26 +52,35 @@ function ipx800v2_update() {
 	{
 		ipx800v2::deamon_start();
 	}
+	foreach (eqLogic::byType('ipx800v2') as $eqLogic) {
+		$SubeqLogic->setConfiguration('type', 'carte');
+		$eqLogic->save();
+	}
 	foreach (eqLogic::byType('ipx800v2_bouton') as $SubeqLogic) {
+		$SubeqLogic->setConfiguration('type', 'bouton');
+		$SubeqLogic->setEqType_name('ipx800v2');
 		$SubeqLogic->save();
 	}
 	foreach (eqLogic::byType('ipx800v2_analogique') as $SubeqLogic) {
+		$SubeqLogic->setConfiguration('type', 'analogique');
+		$SubeqLogic->setEqType_name('ipx800v2');
 		$SubeqLogic->save();
 	}
 	foreach (eqLogic::byType('ipx800v2_relai') as $SubeqLogic) {
+		$SubeqLogic->setConfiguration('type', 'relai');
+		$SubeqLogic->setEqType_name('ipx800v2');
 		$SubeqLogic->save();
 	}
 	foreach (eqLogic::byType('ipx800v2_compteur') as $SubeqLogic) {
+		$SubeqLogic->setConfiguration('type', 'compteur');
+		$SubeqLogic->setEqType_name('ipx800v2');
 		$SubeqLogic->save();
-	}
-	foreach (eqLogic::byType('ipx800v2') as $eqLogic) {
-		$eqLogic->save();
 	}
 	if ( config::byKey('temporisation_lecture', 'ipx800v2') == "" )
 	{
 		config::save('temporisation_lecture', 60, 'ipx800v2');
 	}
-	config::save('subClass', 'ipx800v2_bouton;ipx800v2_analogique;ipx800v2_relai;ipx800v2_compteur', 'ipx800v2');
+	config::remove('subClass', 'ipx800v2');
 }
 
 function ipx800v2_remove() {

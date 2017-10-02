@@ -101,6 +101,18 @@ class ipx800v2 extends eqLogic {
 
 	public function preUpdate()
 	{
+		switch ($this->getEqType_name()) {
+			case "carte":
+				break;
+			case "bouton":
+				break;
+			case "analogique":
+				break;
+			case "relai":
+				break;
+			case "compteur":
+				break;
+		}
 		if ( $this->getIsEnable() )
 		{
 			log::add('ipx800v2','debug','get '.preg_replace("/:[^:]*@/", ":XXXX@", $this->getUrl()). 'status.xml');
