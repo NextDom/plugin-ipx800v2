@@ -95,7 +95,7 @@
         "Entrée numérique": "Digitaleingang",
         "Compteur": "Zähler",
         "Gestion": "Gestion",
-        "Configuration": "Configuration"
+        "Configuration": "Konfiguration"
     },
     "plugins\/ipx800v2\/desktop\/js\/ipx800v2.js": {
         "Nom": "Name",
@@ -117,6 +117,6 @@
     },
     "plugins\/ipx800v2\/plugin_info\/configuration.php": {
         "Temporisation minumum entre deux lectures en secondes": "Temporisation minumum entre deux lectures en secondes",
-        "Trop diminuer cette valeur peut rendre instable votre serveur": "Trop diminuer cette valeur peut rendre instable votre serveur"
+        "Trop diminuer cette valeur peut rendre instable votre serveur": "Wenn Sie diesen Wert zu stark verringern, kann Ihr Server instabil werden"
     }
 }
